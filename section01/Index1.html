@@ -1,0 +1,26 @@
+JSON: JavaScript Object Notation
+
+<div id="output"></div>
+
+<script>
+    var myObj = {
+        "friends": [{
+            "first": "Mike",
+            "last": "Jones"
+        }, {
+            "first": "John",
+            "last": "Smith"
+        }]
+    }
+
+    console.log(myObj);
+    var users = myObj.friends;
+    console.log(users);
+    for (var x in users) {
+        var y = "st";
+        console.log(x + " = " + users[x].first + " " + users[x]["la" + y]);
+
+    }
+
+
+</script>
