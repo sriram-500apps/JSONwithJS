@@ -1,0 +1,24 @@
+JSON: JavaScript Object Notation
+<div id="output"></div>
+<script>
+    var myObj = { "people": [{ "firstName": "Laurence", "lastName": "Smith", "age": 50 }, { "firstName": "John", "lastName": "Jone", "age": 50 }] };
+    myObj.people[1].monthsknown = "18";
+
+    //sessionStorage.setItem('friend',JSON.stringify(myObj) );
+
+    var myList = JSON.parse(sessionStorage.getItem('friend'));
+    console.log(myList);
+
+    // stringify will convert JSON data into a string
+    var strpeople = JSON.stringify(myObj);
+    /// console.log(strpeople );
+
+    // parse will convert string data into JSON format
+    var myfriends = JSON.parse(strpeople);
+    // console.log(myfriends);
+
+    ///console.log(myObj);
+    document.getElementById('output').innerHTML = myObj.people[0].lastName + ' ' + myObj.people[1].firstName;
+
+
+</script>
