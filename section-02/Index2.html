@@ -1,0 +1,26 @@
+JSON: JavaScript Object Notation
+<style>
+    #btn {
+        border: 1px solid black;
+        padding: 10px;
+    }
+
+    .joke {
+        display: block;
+        padding: 5px;
+        margin-top: 10px;
+    }
+</style>
+<div id="btn">Click Me</div>
+<div id="output"></div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $("#btn").click(function () {
+            $.getJSON("http://api.icndb.com/jokes/random?firstName=John&lastName=Doe", function (data) {
+                $('#output').append('<div class="joke">' + data.value.joke + '</div>');
+
+            })
+        })
+    })
+</script>

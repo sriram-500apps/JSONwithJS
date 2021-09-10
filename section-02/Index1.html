@@ -1,0 +1,23 @@
+JSON: JavaScript Object Notation
+<style>
+    #btn {
+        border: 1px solid black;
+        padding: 10px;
+    }
+</style>
+<div id="btn">Click Me</div>
+<div id="output"></div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $("#btn").click(function () {
+            //https://api.myjson.com/bins/4i3mg
+            $.getJSON("http://myjson.dit.upm.es/api/bins/ly8", function (data) {
+                $.each(data.people, function (index, key) {
+                    $('#output').append(key.firstName + '  ' + key.lastName + '  ' + key.age + ' <br> ');
+                })
+            })
+        })
+    })
+
+</script>
