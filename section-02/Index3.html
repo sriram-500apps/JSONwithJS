@@ -1,0 +1,30 @@
+JSON: JavaScript Object Notation
+<style>
+    #btn {
+        border: 1px solid black;
+        padding: 10px;
+    }
+
+    .joke {
+        display: block;
+        padding: 5px;
+        margin-top: 10px;
+    }
+
+    img {
+        max-width: 100px;
+    }
+</style>
+<div id="btn">Click Me</div>
+<div id="output"></div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $("#btn").click(function () {
+            $.getJSON("https://api.mixcloud.com/popular/", function (data) {
+                console.log("data", data);
+                $('#output').append('<div class="joke">' + data["name"] + '<img src="' + data.pictures["320wx320h"] + '"></div>')
+            })
+        })
+    })
+</script>
